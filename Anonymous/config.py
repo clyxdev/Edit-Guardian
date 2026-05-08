@@ -1,5 +1,6 @@
 # (©) Anonymous Emperor
 
+import os
 from pyrogram import filters
 
 LOGS = -1002105665930
@@ -30,7 +31,7 @@ class Config:
     API_HASH = "e12488391771ajajkamb"  # Replace with your API Hash
     BOT_TOKEN = "BOT_TOKEN"  # Replace with your Bot Token generate from @BotFather
     TOKEN = BOT_TOKEN
-    MONGO_URI = "MONGO_DB_URL"  # Replace with your MongoDB URI
+    MONGO_URI = os.getenv("MONGO_URL", "mongodb://localhost:27017")  # MongoDB URI from environment
     OWNERS = [
         6346273488,  # (Creator)
         1805959544,  #  (Sukuna)
@@ -39,6 +40,7 @@ class Config:
         5881613383,  # ( Anox )
     ]  # Replace with the owner IDs
     DATABASE_NAME = "AnonymousDB"
+    DB_NAME = DATABASE_NAME
     LOGS = -1002105665930 # Replace with your logs channel Id
     SESSION = "STRING_SESSION"    # String Session for userbot
     LOG_CHANNEL_ID = -1002105665930 # Replace with your logs channel Id 
